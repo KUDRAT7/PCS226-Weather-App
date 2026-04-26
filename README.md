@@ -1,4 +1,4 @@
-# Modern Weather App
+# React Weather App
 
 A React weather app built with Vite. It uses functional components, hooks, reusable components, a dark/light theme toggle, loading/error states, and the OpenWeather API.
 
