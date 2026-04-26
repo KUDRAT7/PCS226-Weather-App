@@ -107,8 +107,8 @@ ul { list-style: none; }
 
 .search-btn {
   background: rgba(255,255,255,0.9);
-  /* color: #1565c0; */
-  color:black;
+  color: #1565c0;
+  /* color:black; */
 }
 .search-btn:hover { background: #fff; transform: scale(1.05); }
 
@@ -239,8 +239,8 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   gap: 6px;
-  color: black;
-  /* color: rgba(255,255,255,0.65); */
+  /* color: black; */
+  color: rgba(255,255,255,0.65);
   font-size: 0.9rem;
   font-weight: 500;
 }
