@@ -1,7 +1,9 @@
-name: Docker Build Check
+name: Production Docker Build Check
 
 on:
   push:
+    branches: [ "main" ]
+  pull_request:
     branches: [ "main" ]
 
 jobs:
@@ -9,5 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - run: docker build -t weather-app .
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build production Docker image
+        run: docker build -t weather-app .
