@@ -18,7 +18,8 @@ function SearchBar({ onSearch, onSearchCoords, onGeolocate, isLoading, recentCit
   }
 
   function selectSuggestion(item) {
-    const label = [item.name, item.state, item.country].filter(Boolean).join(', ');
+    const cleanName = item.ascii_name || item.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+const label = [cleanName, item.state, item.country].filter(Boolean).join(', ');
     onSearchCoords(item.lat, item.lon, label);
     setValue('');
     setOpen(false);
@@ -126,7 +127,9 @@ function SearchBar({ onSearch, onSearchCoords, onGeolocate, isLoading, recentCit
                 <circle cx="12" cy="10" r="3" />
                 <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
               </svg>
-              <span className="suggestion-name">{item.name}</span>
+              <span className="suggestion-name">
+  {item.ascii_name || item.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "")}
+</span>
               <span className="suggestion-meta">
                 {[item.state, item.country].filter(Boolean).join(', ')}
               </span>
