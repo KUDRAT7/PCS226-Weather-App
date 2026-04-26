@@ -33,6 +33,6 @@ jobs:
 
       - name: Redeploy Railway service
         if: github.event_name == 'push'
-        run: railway redeploy --yes
+        run: railway redeploy --service weather-app --yes
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
