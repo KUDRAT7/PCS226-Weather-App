@@ -5,7 +5,7 @@ A React weather app built with Vite. It uses functional components, hooks, reusa
 ## Folder Structure
 
 ```text
-modern-weather-app/
+weather-app/
 ├── .env.example
 ├── .gitignore
 ├── index.html
